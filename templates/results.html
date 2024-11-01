@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+
+    <canvas id="predictionChart" width="400" height="200"></canvas>
+
+    <script>
+        var ctx = document.getElementById('predictionChart').getContext('2d');
+
+        // Parse the data passed from Flask to JavaScript
+        var dates = {{ dates|tojson }};
+        var realValues = {{ real_values|tojson }};
+        var predictedValues = {{ predicted_values|tojson }};
+
+        // Create the chart
+        var predictionChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,  // X-axis will be the dates
+                datasets: [
+                    {
+                        label: 'Real Value',
+                        data: realValues,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    },
+                    {
+                        label: 'Predicted Value',
+                        data: predictedValues,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'category',
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    },
+                    y: {
+                        beginAtZero: false,
+                        title: {
+                            display: true,
+                            text: 'Price'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

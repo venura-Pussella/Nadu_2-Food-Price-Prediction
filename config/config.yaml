@@ -1,0 +1,49 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://github.com/venura-Pussella/Nadu_2_Price_Prediction/blob/main/Lstm_Dates.xlsx
+  local_data_file: artifacts/data_ingestion/Lstm_Dates.xlsx
+  unzip_dir: artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: artifacts/data_ingestion/Lstm_Dates.xlsx
+  STATUS_FILE: artifacts/data_validation/status.txt
+
+data_preprocessing:
+  root_dir: artifacts/data_preprocessing
+  unzip_data_dir: artifacts/data_ingestion/Lstm_Dates.xlsx
+  local_data_file: artifacts/data_preprocessing/Lstm_data_preprocessed.xlsx
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_preprocessing/Lstm_data_preprocessed.xlsx
+  local_data_file: artifacts/data_transformation/lstm_transformed.xlsx
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  root_dir_train: artifacts/model_trainer/train
+  root_dir_test: artifacts/model_trainer/test
+  local_data_path: artifacts/data_transformation/lstm_transformed.xlsx
+  train_x_data_file: artifacts/model_trainer/train/train_x.xlsx
+  train_y_data_file: artifacts/model_trainer/train/train_y.xlsx
+  test_x_data_file: artifacts/model_trainer/test/test_x.xlsx
+  test_y_data_file: artifacts/model_trainer/test/test_y.xlsx
+  model_checkpoint_path: artifacts/model_trainer/model/best_model.keras
+  sequence_length: 30
+  n_units_layer1: 128
+  n_units_layer2: 64
+  n_units_layer3: 32
+  activation: 'linear'
+  dropout_rate: 0.2
+  optimizer: 'adam'
+  loss_function: 'mean_squared_error'
+  epochs: 300
+  batch_size: 32
+  validation_split: 0.2
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  model_path: artifacts/model_trainer/model/best_model.keras
+  metric_file_name: artifacts/model_evaluation/metrics.xlsx

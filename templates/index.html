@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predict Future Food Prices using LSTM</h1>
+    
+    <!-- Button to trigger food price prediction -->
+    <form method="POST" action="/predict">
+        <button type="submit">Predict Future Food Prices</button>
+    </form>
+
+    <!-- Button to retrain the model -->
+    <h2>Need to retrain the model?</h2>
+    <form method="GET" action="/train">
+        <button type="submit">Retrain Model</button>
+    </form>
+    
+</body>
+</html>

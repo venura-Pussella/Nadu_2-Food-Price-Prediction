@@ -1,0 +1,4 @@
+__pycache__/
+/src/connectors/cosmos.py
+/notebooks/2019-2023/test_data_extraction_from_cosmos_db.ipynb
+/notebooks/input_sequence_generation_cosmos_db.ipynb
