@@ -1,7 +1,8 @@
 from src import logger
-from src.components.data_ingestion import download_file
+from src.components.data_ingestion import fetch_cosmosdb_data_to_dataframe , preprocess_dataframe
 from src.utils.common import create_directories
 from src.configuration.configuration import load_configuration, get_data_ingestion_config
+from src.connectors.cosmos import cosmos_url, cosmos_key, database_name, container_name, query
 
 def data_ingestion_training_pipeline():
     """Runs the data ingestion pipeline."""
@@ -19,7 +20,9 @@ def data_ingestion_training_pipeline():
         create_directories([data_ingestion_config.root_dir])
 
         # Download the data file as part of the data ingestion process
-        download_file(data_ingestion_config)
+        df = fetch_cosmosdb_data_to_dataframe(cosmos_url, cosmos_key, database_name, container_name, query)
+
+        preprocess_dataframe(df, data_ingestion_config)
 
     except Exception as e:
         logger.error(f"An error occurred during data ingestion: {e}")

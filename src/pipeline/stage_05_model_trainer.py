@@ -10,10 +10,10 @@ def model_trainer_training_pipeline():
         # Load config and schema
         config,schema = load_configuration()
 
-        # Retrieve the data ingestion configuration from the loaded config
+        # Retrieve the model trainer configuration from the loaded config
         model_trainer_config = get_model_trainer_config(config,schema)
 
-        # Create directories related to data ingestion (root directory)
+        # Create directories related to model trainer (root directory)
         create_directories([model_trainer_config.root_dir, model_trainer_config.root_dir_train, model_trainer_config.root_dir_test])
 
         # Sequence creation

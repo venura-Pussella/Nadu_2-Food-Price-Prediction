@@ -17,7 +17,7 @@ def box_cox_with_min_max_scaling(input_prices, lambda_value =-0.1207758043220706
     transformed_prices = boxcox(input_prices, lmbda=lambda_value)
     
     # Step 2: Load the MinMaxScaler
-    scaler = joblib.load('artifacts/model_trainer/min_max_scaler/min_max_scaler.pkl')
+    scaler = joblib.load('artifacts/data_transformation/min_max_scaler.pkl')
     
     # Convert transformed prices to a DataFrame with the same column names as during training
     df_prices = pd.DataFrame(transformed_prices, columns=['pettah_average'])

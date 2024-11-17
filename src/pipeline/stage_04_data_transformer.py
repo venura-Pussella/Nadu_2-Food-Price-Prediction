@@ -19,16 +19,16 @@ def data_transformation_training_pipeline():
         box_cox = box_cox_transformation(data_transformation_config)
         
         # min max scale 
-        min_max = min_max_scale(box_cox)
+        min_max_df = min_max_scale(box_cox, data_transformation_config)
 
         # remove zeros
-        remove_zeros=remove_zeros_in_df(min_max)
+        remove_zeros=remove_zeros_in_df(min_max_df)
 
         # saving the file 
         save_preprocessed_excel(data_transformation_config, remove_zeros)
 
     except Exception as e:
-        logger.error(f"An error occurred during data validation pipeline: {e}")
+        logger.error(f"An error occurred during data transformation pipeline: {e}")
 
 if __name__ == "__main__":
 

@@ -16,12 +16,13 @@ def inverse_transform_output(predicted_prices, lambda_value):
     scaler = joblib.load('artifacts/model_trainer/min_max_scaler/min_max_scaler.pkl')
     
     # Convert predicted prices to a DataFrame
-    df_predicted = pd.DataFrame(predicted_prices, columns=['pettah_average'])
+    df_predicted = pd.DataFrame(predicted_prices[0], columns=['pettah_average'])
+
+    print(df_predicted)
 
     # Inverse transform the scaled prices back to the original scale
     original_prices = scaler.inverse_transform(df_predicted)
 
-    # Step 2: Inverse Box-Cox Transformation
     # Apply inverse Box-Cox transformation
     if lambda_value == 0:
         inverse_transformed_prices = np.exp(original_prices)  # Special case for lambda = 0

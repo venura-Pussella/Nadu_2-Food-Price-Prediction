@@ -1,14 +1,7 @@
 COLUMNS:
   date: object   # Could also be datetime
-  items: object  # Assuming items are strings
+  item: object  # Assuming items are strings
   pettah_average: float64
-  pettah_min_value: float64
-  pettah_max_value: float64
-  food_inflation_Base_2013: float64
-  percipitation: float64
-  Bankrupt: float64
-  pettah_range: float64
-  pettah_midpoint: float64
 
 TARGET_COLUMN:
   name: pettah_average

@@ -26,6 +26,7 @@ class DataTransformationConfig:
     root_dir: Path
     data_path: Path
     local_data_file: Path
+    min_max_scaler_file:Path
 
 @dataclass(frozen=True)
 class ModelTrainerConfig:
@@ -38,12 +39,17 @@ class ModelTrainerConfig:
     test_y_data_file: Path
     test_x_data_file: Path
     model_checkpoint_path: Path
+    filters: int
+    kernel_size: int
+    activation1: str
     n_units_layer1: int
     n_units_layer2: int
     n_units_layer3: int
-    activation: str
+    n_units_layer4: int
+    activation2: str
     dropout_rate: float
     sequence_length: int
+    forecast_horizon: int
     optimizer: str
     loss_function: str
     epochs: int

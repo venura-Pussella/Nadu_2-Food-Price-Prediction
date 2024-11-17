@@ -20,6 +20,7 @@ data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_preprocessing/Lstm_data_preprocessed.xlsx
   local_data_file: artifacts/data_transformation/lstm_transformed.xlsx
+  min_max_scaler_file: artifacts/data_transformation/min_max_scaler.pkl
 
 model_trainer:
   root_dir: artifacts/model_trainer
@@ -30,17 +31,22 @@ model_trainer:
   train_y_data_file: artifacts/model_trainer/train/train_y.xlsx
   test_x_data_file: artifacts/model_trainer/test/test_x.xlsx
   test_y_data_file: artifacts/model_trainer/test/test_y.xlsx
-  model_checkpoint_path: artifacts/model_trainer/model/best_model.keras
+  model_checkpoint_path: artifacts/model_trainer/model/5day_model.keras
+  filters: 64
+  kernel_size: 3
+  activation1: 'relu'
   sequence_length: 30
+  forecast_horizon: 5
   n_units_layer1: 128
   n_units_layer2: 64
   n_units_layer3: 32
-  activation: 'linear'
+  n_units_layer4: 5
+  activation2: 'linear'
   dropout_rate: 0.2
   optimizer: 'adam'
   loss_function: 'mean_squared_error'
-  epochs: 300
-  batch_size: 32
+  epochs: 100
+  batch_size: 64
   validation_split: 0.2
 
 model_evaluation:

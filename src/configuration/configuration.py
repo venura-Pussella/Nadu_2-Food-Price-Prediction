@@ -65,7 +65,9 @@ def get_data_transformation_config(config) -> DataTransformationConfig:
     return DataTransformationConfig(
         root_dir=data_transformation.root_dir,
         data_path=data_transformation.data_path,
-        local_data_file=data_transformation.local_data_file
+        local_data_file=data_transformation.local_data_file,
+        min_max_scaler_file=data_transformation.min_max_scaler_file
+        
     )
 ###>>> Data Transformation Configuration End <<<###
 
@@ -87,12 +89,17 @@ def get_model_trainer_config(config,schema) -> ModelTrainerConfig:
         test_x_data_file=model_trainer.test_x_data_file,
         test_y_data_file=model_trainer.test_y_data_file,
         model_checkpoint_path=model_trainer.model_checkpoint_path,
+        filters=model_trainer.filters,
+        kernel_size=model_trainer.kernel_size,
+        activation1=model_trainer.activation1,
         n_units_layer1=model_trainer.n_units_layer1,
         n_units_layer2=model_trainer.n_units_layer2,
         n_units_layer3=model_trainer.n_units_layer3,
-        activation=model_trainer.activation,
+        n_units_layer4=model_trainer.n_units_layer4,
+        activation2=model_trainer.activation2,
         dropout_rate=model_trainer.dropout_rate,
         sequence_length=model_trainer.sequence_length,
+        forecast_horizon=model_trainer.forecast_horizon,
         optimizer=model_trainer.optimizer,
         loss_function=model_trainer.loss_function,
         epochs=model_trainer.epochs,
