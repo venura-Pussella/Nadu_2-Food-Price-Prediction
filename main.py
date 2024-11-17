@@ -4,7 +4,7 @@ from src.pipeline.stage_02_data_validation import data_validation_training_pipel
 from src.pipeline.stage_03_data_preprocessing import data_preprocessing_training_pipeline
 from src.pipeline.stage_04_data_transformer import data_transformation_training_pipeline
 from src.pipeline.stage_05_model_trainer import model_trainer_training_pipeline
-from src.pipeline.stage_06_model_evaluation import model_evaluation_training_pipeline
+# from src.pipeline.stage_06_model_evaluation import model_evaluation_training_pipeline
 
 STAGE_NAME = "Data Ingestion stage"
 
