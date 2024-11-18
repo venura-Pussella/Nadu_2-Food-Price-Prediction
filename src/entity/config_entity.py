@@ -38,6 +38,8 @@ class ModelTrainerConfig:
     train_x_data_file: Path
     test_y_data_file: Path
     test_x_data_file: Path
+    train_dates_data_file: Path
+    test_dates_data_file: Path
     model_checkpoint_path: Path
     filters: int
     kernel_size: int

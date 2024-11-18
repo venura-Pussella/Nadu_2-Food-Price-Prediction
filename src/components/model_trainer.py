@@ -12,7 +12,9 @@ def sequence_creation_with_forecast(config):
     # Ensure 'date' column is present and set as the index
     if 'date' not in df.columns:
         raise ValueError("The dataset must contain a 'date' column.")
+    
     df['date'] = pd.to_datetime(df['date'])
+
     df.set_index('date', inplace=True)
 
     # Extract values and date index
@@ -54,26 +56,48 @@ def sequence_creation_with_forecast(config):
     return train_x, test_x, train_y, test_y, train_dates, test_dates
 
 
-def save_train_test_data_to_excel(train_x, test_x, train_y, test_y, config):
+def save_train_test_data_to_excel(train_x, test_x, train_y, test_y, train_dates, test_dates, config):
+    """
+    Save training and testing data (features, labels, and forecast dates) to Excel files.
+
+    Args:
+        train_x (np.ndarray): Training input sequences.
+        test_x (np.ndarray): Testing input sequences.
+        train_y (np.ndarray): Training labels.
+        test_y (np.ndarray): Testing labels.
+        train_dates (list): List of forecast dates for training.
+        test_dates (list): List of forecast dates for testing.
+        config: Configuration object containing paths for saving files.
+    """
 
     # Convert train_x, train_y, test_x, test_y to DataFrames
     train_x_df = pd.DataFrame(train_x.reshape(train_x.shape[0], -1))  # Flatten 3D array to 2D
-    train_y_df = pd.DataFrame(train_y, columns=[config.target_column])
+    test_x_df = pd.DataFrame(test_x.reshape(test_x.shape[0], -1))    # Flatten 3D array to 2D
 
-    test_x_df = pd.DataFrame(test_x.reshape(test_x.shape[0], -1))  # Flatten 3D array to 2D
-    test_y_df = pd.DataFrame(test_y, columns=[config.target_column])
+    # Convert labels and dates to DataFrames
+    train_y_df = pd.DataFrame(train_y, columns=[f"{config.target_column}_day_{i+1}" for i in range(train_y.shape[1])])
+    test_y_df = pd.DataFrame(test_y, columns=[f"{config.target_column}_day_{i+1}" for i in range(test_y.shape[1])])
+
+    train_dates_df = pd.DataFrame(train_dates, columns=[f"forecast_date_day_{i+1}" for i in range(train_y.shape[1])])
+    test_dates_df = pd.DataFrame(test_dates, columns=[f"forecast_date_day_{i+1}" for i in range(test_y.shape[1])])
 
     # Save DataFrames to Excel files defined in config
     train_x_path = config.train_x_data_file
     train_y_path = config.train_y_data_file
+    train_dates_path = config.train_dates_data_file
+
     test_x_path = config.test_x_data_file
     test_y_path = config.test_y_data_file
+    test_dates_path = config.test_dates_data_file
 
+    # Save the data
     train_x_df.to_excel(train_x_path, index=False)
     train_y_df.to_excel(train_y_path, index=False)
+    train_dates_df.to_excel(train_dates_path, index=False)
 
     test_x_df.to_excel(test_x_path, index=False)
     test_y_df.to_excel(test_y_path, index=False)
+    test_dates_df.to_excel(test_dates_path, index=False)
 
 def lstm_model_trainer(train_x, train_y, config):
 

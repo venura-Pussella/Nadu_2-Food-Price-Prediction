@@ -17,10 +17,12 @@ def model_trainer_training_pipeline():
         create_directories([model_trainer_config.root_dir, model_trainer_config.root_dir_train, model_trainer_config.root_dir_test])
 
         # Sequence creation
-        train_x, test_x, train_y, test_y = sequence_creation_with_forecast(model_trainer_config)
+        train_x, test_x, train_y, test_y, train_dates, test_dates = sequence_creation_with_forecast(model_trainer_config)
+
+        print(train_x.shape, test_x.shape, train_y.shape, test_y.shape)
         
         # Saving data to an excel from numpy array (3D to 2D)
-        save_train_test_data_to_excel(train_x, test_x, train_y, test_y, model_trainer_config)
+        save_train_test_data_to_excel(train_x, test_x, train_y, test_y,train_dates, test_dates, model_trainer_config)
 
         # Train the model
         lstm_model_trainer(train_x, train_y, model_trainer_config)

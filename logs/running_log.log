@@ -4118,3 +4118,1423 @@ Response headers:
 [2024-11-18 01:05:24,429: INFO: common: created directory at: artifacts/model_trainer/test]
 [2024-11-18 01:05:24,480: ERROR: stage_05_model_trainer: An error occurred in model trainer : too many values to unpack (expected 4)]
 [2024-11-18 01:05:24,480: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 09:00:59,554: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:00:59,566: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:00:59,566: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:00:59,566: INFO: common: created directory at: artifacts]
+[2024-11-18 09:00:59,566: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:00:59,614: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:01:00,210: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:30:59 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:01:00,226: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:01:01,010: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:31:00 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:01:01,010: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:01:01,110: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:31:00 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:01:01,590: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:01:01,590: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:01:01,590: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:01,590: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:01,590: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:01:01,646: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:01:01,646: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:01:01,663: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:01,665: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:01,665: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:01:01,803: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:01:01,803: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:01:01,806: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:01,808: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:01,808: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:01:02,011: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:01:02,026: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:01:02,026: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:02,031: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:02,031: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:01:02,032: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:01:02,032: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:01:02,079: ERROR: stage_05_model_trainer: An error occurred in model trainer : too many values to unpack (expected 4)]
+[2024-11-18 09:01:02,079: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 09:01:14,665: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:01:14,679: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:14,679: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:14,679: INFO: common: created directory at: artifacts]
+[2024-11-18 09:01:14,686: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:01:14,686: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:01:15,188: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:31:14 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:01:15,196: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:01:16,012: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:31:14 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:01:16,036: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:01:16,130: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:31:15 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:01:17,170: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:01:17,180: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:01:17,193: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:17,197: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:17,198: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:01:17,440: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:01:17,440: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:01:17,455: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:17,459: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:17,460: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:01:17,978: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:01:17,978: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:01:17,996: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:01:17,998: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:01:17,999: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:01:18,778: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:01:18,778: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:03:37,411: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:03:41,155: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:03:54,785: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:03:57,102: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:04:00,933: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:08:02,623: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:08:02,623: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:02,623: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:02,623: INFO: common: created directory at: artifacts]
+[2024-11-18 09:08:02,623: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:08:02,699: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:08:03,219: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:38:02 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:08:03,235: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:08:04,070: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:38:03 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:08:04,075: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:08:04,166: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:38:04 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:08:04,670: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:08:04,671: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:08:04,674: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:04,675: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:04,676: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:08:04,751: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:08:04,751: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:08:04,755: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:04,756: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:04,757: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:08:04,905: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:08:04,906: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:08:04,906: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:04,906: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:04,906: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:08:05,121: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:08:05,121: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:08:05,121: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:05,121: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:05,121: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:08:05,127: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:08:05,128: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:08:05,195: ERROR: stage_05_model_trainer: An error occurred in model trainer : too many values to unpack (expected 4)]
+[2024-11-18 09:08:05,197: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 09:08:44,928: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:08:44,955: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:44,955: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:44,955: INFO: common: created directory at: artifacts]
+[2024-11-18 09:08:44,955: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:08:44,955: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:08:45,440: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:38:44 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:08:45,456: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:08:46,331: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:38:45 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:08:46,331: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:08:46,429: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:38:46 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-quorum-acked-lsn': 'REDACTED'
+    'x-ms-current-write-quorum': 'REDACTED'
+    'x-ms-current-replica-set-size': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-cosmos-quorum-acked-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:08:47,332: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:08:47,332: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:08:47,343: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:47,356: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:47,358: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:08:47,605: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:08:47,605: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:08:47,605: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:47,623: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:47,625: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:08:48,114: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:08:48,114: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:08:48,135: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:48,141: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:48,142: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:08:48,685: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:08:48,685: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:08:54,220: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:08:54,225: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:08:58,104: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:08:58,106: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:08:58,106: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:10:08,052: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:10:08,052: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:10:08,066: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:10:08,066: INFO: common: created directory at: artifacts]
+[2024-11-18 09:10:08,068: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:10:08,119: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:10:08,692: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:40:07 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:10:08,692: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:10:09,499: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:40:08 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:10:09,510: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:10:09,619: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:40:08 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-quorum-acked-lsn': 'REDACTED'
+    'x-ms-current-write-quorum': 'REDACTED'
+    'x-ms-current-replica-set-size': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-cosmos-quorum-acked-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:10:10,133: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:10:10,133: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:10:10,133: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:10:10,133: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:10:10,133: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:10:10,243: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:10:10,243: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:10:10,246: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:10:10,247: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:10:10,248: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:10:10,383: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:10:10,383: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:10:10,383: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:10:10,383: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:10:10,383: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:10:10,606: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:10:10,607: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:10:10,610: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:10:10,611: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:10:10,612: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:10:10,614: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:10:10,614: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:10:10,709: ERROR: stage_05_model_trainer: An error occurred in model trainer : Shape of passed values is (1566, 5), indices imply (1566, 1)]
+[2024-11-18 09:10:10,709: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 09:23:12,712: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:23:12,712: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:23:12,712: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:23:12,712: INFO: common: created directory at: artifacts]
+[2024-11-18 09:23:12,712: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:23:12,766: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:23:13,373: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:53:13 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:23:13,384: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:23:14,210: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:53:13 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:23:14,215: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:23:14,331: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:53:13 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-quorum-acked-lsn': 'REDACTED'
+    'x-ms-current-write-quorum': 'REDACTED'
+    'x-ms-current-replica-set-size': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-cosmos-quorum-acked-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:23:14,797: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:23:14,797: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:23:14,797: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:23:14,797: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:23:14,797: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:23:14,866: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:23:14,866: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:23:14,866: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:23:14,880: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:23:14,881: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:23:15,014: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:23:15,014: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:23:15,030: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:23:15,030: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:23:15,033: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:23:15,243: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:23:15,243: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:23:15,247: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:23:15,247: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:23:15,247: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:23:15,250: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:23:15,250: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:23:15,317: ERROR: stage_05_model_trainer: An error occurred in model trainer : save_train_test_data_to_excel() missing 2 required positional arguments: 'test_dates' and 'config']
+[2024-11-18 09:23:15,317: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 09:24:42,976: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:24:42,992: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:24:42,992: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:24:42,992: INFO: common: created directory at: artifacts]
+[2024-11-18 09:24:42,992: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:24:43,052: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:24:43,638: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:54:43 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:24:43,638: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:24:44,575: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:54:43 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:24:44,575: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:24:44,685: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:54:43 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:24:45,140: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:24:45,140: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:24:45,154: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:24:45,158: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:24:45,159: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:24:45,227: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:24:45,227: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:24:45,230: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:24:45,231: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:24:45,231: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:24:45,370: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:24:45,370: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:24:45,370: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:24:45,370: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:24:45,370: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:24:45,610: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:24:45,610: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:24:45,613: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:24:45,615: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:24:45,616: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:24:45,616: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:24:45,617: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:24:45,709: ERROR: stage_05_model_trainer: An error occurred in model trainer : 'ModelTrainerConfig' object has no attribute 'train_dates_data_file']
+[2024-11-18 09:24:45,712: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 09:27:44,999: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 09:27:44,999: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:27:44,999: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:27:44,999: INFO: common: created directory at: artifacts]
+[2024-11-18 09:27:44,999: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 09:27:45,063: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 09:27:45,661: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 03:57:45 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 09:27:45,661: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:27:46,455: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 03:57:45 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-quorum-acked-lsn': 'REDACTED'
+    'x-ms-current-write-quorum': 'REDACTED'
+    'x-ms-current-replica-set-size': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-cosmos-quorum-acked-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:27:46,455: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 09:27:46,570: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '52473'
+    'Date': 'Mon, 18 Nov 2024 03:57:46 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 09:27:47,024: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 09:27:47,024: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 09:27:47,035: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:27:47,038: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:27:47,039: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 09:27:47,095: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 09:27:47,095: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 09:27:47,095: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:27:47,109: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:27:47,110: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 09:27:47,241: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 09:27:47,241: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 09:27:47,241: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:27:47,241: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:27:47,241: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 09:27:47,458: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 09:27:47,458: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 09:27:47,458: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 09:27:47,458: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 09:27:47,458: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 09:27:47,467: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 09:27:47,467: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 09:30:31,295: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 21:52:41,185: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-11-18 21:52:41,191: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 21:52:41,194: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 21:52:41,194: INFO: common: created directory at: artifacts]
+[2024-11-18 21:52:41,194: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-18 21:52:41,246: INFO: _universal: Request URL: 'https://db-brownschatbot.documents.azure.com:443/'
+Request method: 'GET'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'Content-Length': '0'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+No body was attached to the request]
+[2024-11-18 21:52:41,886: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '1632'
+    'Date': 'Mon, 18 Nov 2024 16:22:40 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-gatewayversion': 'REDACTED'
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'x-ms-max-media-storage-usage-mb': 'REDACTED'
+    'x-ms-media-storage-usage-mb': 'REDACTED'
+    'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+    'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+    'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Content-Location': 'REDACTED']
+[2024-11-18 21:52:41,886: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 21:52:43,054: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '400833'
+    'Date': 'Mon, 18 Nov 2024 16:22:41 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-quorum-acked-lsn': 'REDACTED'
+    'x-ms-current-write-quorum': 'REDACTED'
+    'x-ms-current-replica-set-size': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-cosmos-quorum-acked-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 21:52:43,060: INFO: _universal: Request URL: 'https://db-brownschatbot-eastasia.documents.azure.com:443/dbs/db_conversation_history/colls/Harti-Data-Histroy/docs/'
+Request method: 'POST'
+Request headers:
+    'Cache-Control': 'no-cache'
+    'x-ms-version': 'REDACTED'
+    'x-ms-documentdb-query-iscontinuationexpected': 'REDACTED'
+    'x-ms-consistency-level': 'REDACTED'
+    'x-ms-documentdb-isquery': 'REDACTED'
+    'Content-Type': 'application/query+json'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-documentdb-query-enablecrosspartition': 'REDACTED'
+    'x-ms-date': 'REDACTED'
+    'authorization': 'REDACTED'
+    'Accept': 'application/json'
+    'x-ms-continuation': 'REDACTED'
+    'x-ms-cosmos-correlated-activityid': 'REDACTED'
+    'Content-Length': '87'
+    'User-Agent': 'azsdk-python-cosmos/4.7.0 Python/3.9.19 (Windows-10-10.0.22631-SP0)'
+A body is sent with the request]
+[2024-11-18 21:52:43,202: INFO: _universal: Response status: 200
+Response headers:
+    'Content-Length': '56075'
+    'Date': 'Mon, 18 Nov 2024 16:22:42 GMT'
+    'Content-Type': 'application/json'
+    'Server': 'Compute'
+    'x-ms-gatewayversion': 'REDACTED'
+    'x-ms-activity-id': 'REDACTED'
+    'x-ms-last-state-change-utc': 'REDACTED'
+    'x-ms-resource-quota': 'REDACTED'
+    'x-ms-resource-usage': 'REDACTED'
+    'x-ms-schemaversion': 'REDACTED'
+    'lsn': 'REDACTED'
+    'x-ms-item-count': 'REDACTED'
+    'x-ms-request-charge': 'REDACTED'
+    'x-ms-alt-content-path': 'REDACTED'
+    'x-ms-content-path': 'REDACTED'
+    'x-ms-documentdb-partitionkeyrangeid': 'REDACTED'
+    'x-ms-xp-role': 'REDACTED'
+    'x-ms-cosmos-query-execution-info': 'REDACTED'
+    'x-ms-global-Committed-lsn': 'REDACTED'
+    'x-ms-number-of-read-regions': 'REDACTED'
+    'x-ms-transport-request-id': 'REDACTED'
+    'x-ms-cosmos-llsn': 'REDACTED'
+    'x-ms-session-token': 'REDACTED'
+    'x-ms-request-duration-ms': 'REDACTED'
+    'x-ms-serviceversion': 'REDACTED'
+    'x-ms-cosmos-is-partition-key-delete-pending': 'REDACTED'
+    'x-ms-cosmos-physical-partition-id': 'REDACTED'
+    'x-ms-cosmos-internal-partition-id': 'REDACTED']
+[2024-11-18 21:52:43,787: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<]
+[2024-11-18 21:52:43,802: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-11-18 21:52:43,809: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 21:52:43,811: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 21:52:43,812: INFO: common: created directory at: artifacts/data_validation]
+[2024-11-18 21:52:43,884: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<]
+[2024-11-18 21:52:43,885: INFO: main: >>>>>> stage Data Preprocessing stage started <<<<<<]
+[2024-11-18 21:52:43,889: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 21:52:43,890: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 21:52:43,891: INFO: common: created directory at: artifacts/data_preprocessing]
+[2024-11-18 21:52:44,038: INFO: main: >>>>>> stage Data Preprocessing stage completed <<<<<<]
+[2024-11-18 21:52:44,039: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-11-18 21:52:44,042: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 21:52:44,044: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 21:52:44,044: INFO: common: created directory at: artifacts/data_transformation]
+[2024-11-18 21:52:44,252: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<]
+[2024-11-18 21:52:44,252: INFO: main: >>>>>> stage Model Training stage started <<<<<<]
+[2024-11-18 21:52:44,252: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 21:52:44,252: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 21:52:44,252: INFO: common: created directory at: artifacts/model_trainer]
+[2024-11-18 21:52:44,261: INFO: common: created directory at: artifacts/model_trainer/train]
+[2024-11-18 21:52:44,261: INFO: common: created directory at: artifacts/model_trainer/test]
+[2024-11-18 21:55:18,418: INFO: main: >>>>>> stage Model Training stage completed <<<<<<]
+[2024-11-18 21:55:18,419: INFO: main: >>>>>> stage Model Evaluation stage started <<<<<<]
+[2024-11-18 21:55:18,424: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 21:55:18,426: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 21:55:18,428: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-11-18 21:55:18,517: ERROR: stage_06_model_evaluation: An error occurred during model evaluation: File not found: filepath=artifacts/model_trainer/model/best_model.keras. Please ensure the file is an accessible `.keras` zip file.]
+[2024-11-18 21:55:18,518: INFO: main: >>>>>> stage Model Evaluation stage completed <<<<<<]
+[2024-11-18 21:58:16,771: INFO: main: >>>>>> stage Model Evaluation stage started <<<<<<]
+[2024-11-18 21:58:16,771: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-18 21:58:16,771: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-11-18 21:58:16,771: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-11-18 21:58:19,087: INFO: main: >>>>>> stage Model Evaluation stage completed <<<<<<]

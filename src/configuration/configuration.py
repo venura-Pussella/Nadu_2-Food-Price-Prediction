@@ -88,6 +88,8 @@ def get_model_trainer_config(config,schema) -> ModelTrainerConfig:
         train_y_data_file=model_trainer.train_y_data_file,
         test_x_data_file=model_trainer.test_x_data_file,
         test_y_data_file=model_trainer.test_y_data_file,
+        train_dates_data_file=model_trainer.train_dates_data_file,
+        test_dates_data_file=model_trainer.test_dates_data_file,
         model_checkpoint_path=model_trainer.model_checkpoint_path,
         filters=model_trainer.filters,
         kernel_size=model_trainer.kernel_size,
