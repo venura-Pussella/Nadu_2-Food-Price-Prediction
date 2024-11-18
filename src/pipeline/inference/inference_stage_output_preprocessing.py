@@ -13,7 +13,7 @@ def inverse_transform_output(predicted_prices, lambda_value):
     # Step 1: Inverse Min-Max Scaling
 
     # Load the MinMaxScaler
-    scaler = joblib.load('artifacts/model_trainer/min_max_scaler/min_max_scaler.pkl')
+    scaler = joblib.load('artifacts/data_transformation/min_max_scaler.pkl')
     
     # Convert predicted prices to a DataFrame
     df_predicted = pd.DataFrame(predicted_prices[0], columns=['pettah_average'])
