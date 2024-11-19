@@ -12,9 +12,12 @@ def box_cox_transformation(config):
     # Apply Box-Cox Transformation to 'pettah_average'
     df['pettah_average'], lambda_value = boxcox(df['pettah_average'].replace(0, 0.01))
 
-    print(f"Lambda value: {lambda_value}")
+    # Write the lambda value to the specified file
+    with open(config.lambda_value, 'w') as file:
+        file.write(str(lambda_value))
     
     return df
+
 
 def min_max_scale(df, config):
     

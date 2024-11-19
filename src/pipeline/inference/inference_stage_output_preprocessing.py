@@ -10,8 +10,6 @@ def inverse_transform_output(predicted_prices, lambda_value):
     :param lambda_value: Lambda value used during the Box-Cox transformation.
     :return: Inverse transformed prices to original scale.
     """
-    # Step 1: Inverse Min-Max Scaling
-
     # Load the MinMaxScaler
     scaler = joblib.load('artifacts/data_transformation/min_max_scaler.pkl')
     

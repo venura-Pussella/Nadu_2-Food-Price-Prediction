@@ -3,9 +3,10 @@ import tensorflow as tf
 from src.pipeline.inference.inference_stage_preprocessing import box_cox_with_min_max_scaling
 from src.pipeline.inference.inference_stage_output_preprocessing import inverse_transform_output
 
-def prediction_pipeline(input_prices, lambda_value = 0.3169412895038746):
+def prediction_pipeline(input_prices, lambda_value):
     
     try:
+
         # input the sequences to Box_cox transform and Min_Max_Scaling 
         transformed_prices = box_cox_with_min_max_scaling(input_prices, lambda_value)
 

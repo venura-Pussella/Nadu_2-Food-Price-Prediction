@@ -123,3 +123,17 @@ def get_size(path: Path) -> str:
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
+
+def read_lambda_value(config):
+    # Read the lambda value from the specified file
+    try:
+        with open(config.lambda_value, 'r') as file:
+            lambda_value = float(file.read().strip())
+        print(f"Lambda value read from {config.lambda_value}: {lambda_value}")
+        return lambda_value
+    except FileNotFoundError:
+        print(f"Error: Lambda value file not found at {config.lambda_value}.")
+        return None
+    except ValueError:
+        print(f"Error: Invalid lambda value in the file at {config.lambda_value}.")
+        return None

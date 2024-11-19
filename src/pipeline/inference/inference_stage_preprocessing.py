@@ -3,7 +3,7 @@ import pandas as pd
 from scipy.stats import boxcox
 import joblib
 
-def box_cox_with_min_max_scaling(input_prices, lambda_value =-0.1207758043220706 ):
+def box_cox_with_min_max_scaling(input_prices, lambda_value):
     """
     Applies Box-Cox transformation and Min-Max scaling to the input prices, 
     and returns the data in a format suitable for LSTM model inference.
@@ -14,7 +14,8 @@ def box_cox_with_min_max_scaling(input_prices, lambda_value =-0.1207758043220706
     """
     # Step 1: Apply Box-Cox transformation using the provided lambda value
     input_prices = np.array(input_prices)
-    transformed_prices = boxcox(input_prices, lmbda=lambda_value)
+
+    transformed_prices = boxcox(input_prices, lambda_value)
     
     # Step 2: Load the MinMaxScaler
     scaler = joblib.load('artifacts/data_transformation/min_max_scaler.pkl')
@@ -29,25 +30,3 @@ def box_cox_with_min_max_scaling(input_prices, lambda_value =-0.1207758043220706
     input_sequence = np.reshape(scaled_prices, (1, scaled_prices.shape[0], 1))  # Shape: (1, 30, 1)
 
     return input_sequence
-
-# if __name__ == '__main__':
-#     # Example input: Prices for 30 days
-#     input_prices = [
-#     100, 110, 120, 115, 130, 
-#     140, 135, 150, 160, 155, 
-#     170, 165, 180, 175, 190, 
-#     200, 205, 210, 220, 225, 
-#     230, 240, 250, 260, 255, 
-#     270, 280, 290, 295, 300, 
-#     310
-# ]
-
-#     # Lambda value obtained from training phase
-#     lambda_value = -0.1207758043220706
-
-#     # Call the function to get the input sequence for LSTM
-#     input_sequence = min_max_scale_inference_with_boxcox(input_prices, lambda_value)
-
-#     # Print the reshaped input sequence
-#     print("Reshaped Input Sequence for LSTM:")
-#     print(input_sequence)

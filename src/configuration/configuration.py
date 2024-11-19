@@ -65,6 +65,7 @@ def get_data_transformation_config(config) -> DataTransformationConfig:
     return DataTransformationConfig(
         root_dir=data_transformation.root_dir,
         data_path=data_transformation.data_path,
+        lambda_value=data_transformation.lambda_value,
         local_data_file=data_transformation.local_data_file,
         min_max_scaler_file=data_transformation.min_max_scaler_file
         

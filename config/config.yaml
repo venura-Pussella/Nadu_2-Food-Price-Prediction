@@ -19,6 +19,7 @@ data_preprocessing:
 data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_preprocessing/Lstm_data_preprocessed.xlsx
+  lambda_value: artifacts/data_transformation/lambda_value.txt
   local_data_file: artifacts/data_transformation/lstm_transformed.xlsx
   min_max_scaler_file: artifacts/data_transformation/min_max_scaler.pkl
 

@@ -25,6 +25,7 @@ class DataPreprocessingConfig:
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
+    lambda_value: Path
     local_data_file: Path
     min_max_scaler_file:Path
 

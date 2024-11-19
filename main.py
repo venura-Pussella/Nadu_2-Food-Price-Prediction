@@ -42,21 +42,21 @@ try:
 except Exception as e:
     logger.exception(e)
 
-STAGE_NAME = "Model Training stage"
+# STAGE_NAME = "Model Training stage"
 
-try:
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-    model_trainer= model_trainer_training_pipeline()
-    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
-except Exception as e:
-    logger.exception(e)
+# try:
+#     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+#     model_trainer= model_trainer_training_pipeline()
+#     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
+# except Exception as e:
+#     logger.exception(e)
 
-STAGE_NAME = "Model Evaluation stage"
+# STAGE_NAME = "Model Evaluation stage"
 
-try:
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-    model_evaluation= model_evaluation_training_pipeline()
-    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
-except Exception as e:
-    logger.exception(e)
+# try:
+#     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+#     model_evaluation= model_evaluation_training_pipeline()
+#     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
+# except Exception as e:
+#     logger.exception(e)
 

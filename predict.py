@@ -1,12 +1,12 @@
 import pandas as pd
-import numpy as np
 from datetime import timedelta
-from src.pipeline.inference.prediction import prediction_pipeline
 from src.connectors.cosmos import cosmos_url, cosmos_key, database_name, container_name, query_30_day
-from src.pipeline.inference.inference_stage_data_ingestion_latest_30days import fetch_cosmosdb_data_to_dataframe_latest30days
-from src.pipeline.inference.inference_stage_data_ingestion_latest_30days import process_cosmosdb_dataframe_latest30days
+from src.pipeline.inference.prediction import prediction_pipeline
+from src.pipeline.inference.inference_stage_data_ingestion_latest_30days import fetch_cosmosdb_data_to_dataframe_latest30days, process_cosmosdb_dataframe_latest30days
+from src.configuration.configuration import load_configuration, get_data_transformation_config
+from src.utils.common import read_lambda_value
 
-def predict_future_prices(lambda_value=0.3169412895038746):
+def predict_future_prices():
 
     # Fetch data from Cosmos DB
     df = fetch_cosmosdb_data_to_dataframe_latest30days(cosmos_url, cosmos_key, database_name, container_name, query_30_day)
@@ -22,8 +22,17 @@ def predict_future_prices(lambda_value=0.3169412895038746):
     # Get the last date in the data to generate future dates
     last_date = pd.to_datetime(df['date'].values[-1])
 
+    # Load the configuration
+    config, _ = load_configuration()
+
+    # Retrieve the data ingestion configuration from the loaded config
+    data_transformation_config = get_data_transformation_config(config)
+
+    # Read the lambda value
+    lambda_value = read_lambda_value(data_transformation_config)
+    
     # Make a single 5-day prediction using the current sequence
-    predicted_prices = prediction_pipeline(current_sequence, lambda_value)
+    predicted_prices = prediction_pipeline(current_sequence, lambda_value = lambda_value)
     
     # Reshape to (1, 5) if necessary
     if predicted_prices.ndim == 1:
