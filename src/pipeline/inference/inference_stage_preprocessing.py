@@ -30,3 +30,4 @@ def box_cox_with_min_max_scaling(input_prices, lambda_value):
     input_sequence = np.reshape(scaled_prices, (1, scaled_prices.shape[0], 1))  # Shape: (1, 30, 1)
 
     return input_sequence
+

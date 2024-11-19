@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from datetime import timedelta
 import joblib
 
 def inverse_transform_output(predicted_prices, lambda_value):
@@ -29,17 +30,31 @@ def inverse_transform_output(predicted_prices, lambda_value):
 
     return inverse_transformed_prices.flatten()  # Return as 1D array
 
-# Example usage
-# if __name__ == '__main__':
-#     # Example output from the model (predicted prices)
-#     predicted_scaled_prices = np.array([[0.5], [0.6], [0.7], [0.8], [0.9]])  # Example scaled output
+def create_prediction_dataframe(predicted_prices, last_date):
 
-#     # Lambda value used in Box-Cox transformation
-#     lambda_value = -0.1207758043220706
+    # Reshape to (1, 5) if necessary
+    if predicted_prices.ndim == 1:
+        predicted_prices = predicted_prices.reshape(1, -1)
 
-#     # Get the inverse transformed prices
-#     real_predicted_prices = inverse_transform_output(predicted_scaled_prices, lambda_value)
-    
-#     # Print the real predicted prices
-#     print("Real Predicted Prices:")
-#     print(real_predicted_prices)
+    # Ensure the shape is (1, 5) as expected
+    if predicted_prices.shape != (1, 5):
+        raise ValueError("Unexpected output from prediction pipeline. Expected a (1, 5) shape, but got something else.")
+
+    # Initialize lists to store predictions and dates
+    predicted_values = []
+    predicted_dates = []
+
+    # Extract each predicted value and corresponding date
+    for j in range(5):
+        predicted_price_value = predicted_prices[0, j]
+        next_date = last_date + timedelta(days=j + 1)
+        predicted_values.append(predicted_price_value)
+        predicted_dates.append(next_date)
+
+    # Create a DataFrame with predicted prices and dates
+    df = pd.DataFrame({
+        'date': predicted_dates,
+        'predicted_value': predicted_values
+    })
+
+    return df

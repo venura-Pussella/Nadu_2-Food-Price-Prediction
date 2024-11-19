@@ -50,4 +50,13 @@ def process_cosmosdb_dataframe_latest30days(df):
     # Reset index to get 'date' back as a column
     df.reset_index(inplace=True)
 
-    return df
+    # Sort the DataFrame by date (if not already sorted)
+    df = df.sort_values(by='date', ascending=True)
+    
+    # Get the initial sequence (last 30 prices)
+    current_sequence = df['pettah_average'].values[-30:].tolist()
+    
+    # Get the last date in the data to generate future dates
+    last_date = pd.to_datetime(df['date'].values[-1])
+
+    return df , current_sequence, last_date
