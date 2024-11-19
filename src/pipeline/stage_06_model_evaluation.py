@@ -19,7 +19,7 @@ def model_evaluation_training_pipeline():
         # Create directories related to model evaluation (root directory)
         create_directories([model_evaluation_config.root_dir])
 
-        train_x, test_x, train_y, test_y,train_dates, test_dates = sequence_creation_with_forecast(model_trainer_config)
+        train_x, train_y, test_x, test_y, train_x_dates, train_y_dates, test_x_dates, test_y_dates = sequence_creation_with_forecast(model_trainer_config)
 
         # model evaluation
         model_evaluation(train_x, test_x, train_y, test_y,model_evaluation_config)
