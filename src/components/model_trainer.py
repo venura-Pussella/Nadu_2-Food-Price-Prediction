@@ -4,8 +4,8 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 import pandas as pd
 import numpy as np
 
-def sequence_creation_with_forecast(config):
 
+def sequence_creation_with_forecast(config):
     # Read the Excel file into a DataFrame
     df = pd.read_excel(config.local_data_path)
 
@@ -14,90 +14,131 @@ def sequence_creation_with_forecast(config):
         raise ValueError("The dataset must contain a 'date' column.")
     
     df['date'] = pd.to_datetime(df['date'])
-
     df.set_index('date', inplace=True)
 
-    # Extract values and date index
-    scaled_data = df.values  # Convert DataFrame to numpy array
-    date_index = df.index  # Extract the date index
+    # Ensure the dataset has sufficient columns and rows
+    if df.shape[1] < 1:
+        raise ValueError("The dataset must contain at least one feature column.")
 
-    # Extract configuration parameters
-    sequence_length = config.sequence_length
-    forecast_horizon = config.forecast_horizon
+    # Define sequence length and forecast horizon
+    sequence_length = config.sequence_length  # e.g., 30
+    forecast_horizon = config.forecast_horizon  # e.g., 5
 
-    # Initialize lists to store sequences, labels, and forecast dates
-    sequences, labels, forecast_dates = [], [], []
+    # Limit data to the latest 1825 data points
+    data = df[-1825:].values
+    dates = df.index[-1825:]
 
-    for i in range(len(scaled_data) - sequence_length - forecast_horizon + 1):
-        # Input sequence for the specified sequence length
-        seq = scaled_data[i:i + sequence_length]
+    # Create sequences and labels
+    sequences, labels, training_dates, forecast_dates = [], [], [], []
+    for i in range(len(data) - sequence_length):
+        # Ensure we don't go out of bounds for forecast horizon
+        if i + sequence_length + forecast_horizon > len(data):
+            break
 
-        # Labels: Next 'forecast_horizon' days (using the first feature for labels)
-        label = scaled_data[i + sequence_length:i + sequence_length + forecast_horizon, 0]
+        seq = data[i:i + sequence_length]
+        label = data[i + sequence_length:i + sequence_length + forecast_horizon, 0]  # Assuming the target is the first column
 
-        # Corresponding dates for the forecast horizon
-        forecast_date_range = date_index[i + sequence_length:i + sequence_length + forecast_horizon]
-
-        # Append to lists
         sequences.append(seq)
         labels.append(label)
-        forecast_dates.append(forecast_date_range)
+        training_dates.append(dates[i:i + sequence_length])
+        forecast_dates.append(dates[i + sequence_length:i + sequence_length + forecast_horizon])
 
-    # Convert to numpy arrays
     sequences = np.array(sequences)
     labels = np.array(labels)
 
-    # Split into training and testing sets (80% train, 20% test)
-    train_size = int(0.8 * len(sequences))
-    train_x, test_x = sequences[:train_size], sequences[train_size:]
-    train_y, test_y = labels[:train_size], labels[train_size:]
-    train_dates, test_dates = forecast_dates[:train_size], forecast_dates[train_size:]
+    # Separate training and testing data
+    train_x = sequences[:-1]
+    train_y = labels[:-1]
+    train_dates = training_dates[:-1]
+
+    test_x = sequences[-1:]
+    test_y = labels[-1:]
+    test_dates = forecast_dates[-1] if len(forecast_dates) > 0 else dates[-forecast_horizon:]
 
     return train_x, test_x, train_y, test_y, train_dates, test_dates
+
+# def sequence_creation_with_forecast(config):
+#     # Read the Excel file into a DataFrame
+#     df = pd.read_excel(config.local_data_path)
+
+#     # Ensure 'date' column is present and set as the index
+#     if 'date' not in df.columns:
+#         raise ValueError("The dataset must contain a 'date' column.")
+    
+#     df['date'] = pd.to_datetime(df['date'])
+#     df.set_index('date', inplace=True)
+
+#     # Ensure the dataset has sufficient columns and rows
+#     if df.shape[1] < 1:
+#         raise ValueError("The dataset must contain at least one feature column.")
+
+#     # Define sequence length and forecast horizon
+#     sequence_length = config.sequence_length  # e.g., 30
+#     forecast_horizon = config.forecast_horizon  # e.g., 5
+
+#     # Limit data to the latest 1825 data points
+#     data = df[-1825:].values
+#     dates = df.index[-1825:]
+
+#     # Create sequences and labels
+#     sequences, labels, training_dates, forecast_dates = [], [], [], []
+#     for i in range(len(data) - sequence_length - forecast_horizon):
+#         seq = data[i:i + sequence_length]
+
+#         label = data[i + sequence_length:i + sequence_length + forecast_horizon, 0]  # Assuming the target is the first column
+        
+#         sequences.append(seq)
+#         labels.append(label)
+#         training_dates.append(dates[i:i + sequence_length])
+#         forecast_dates.append(dates[i + sequence_length:i + sequence_length + forecast_horizon])
+
+#     sequences = np.array(sequences)
+#     labels = np.array(labels)
+
+#     # Separate training and testing data
+#     train_x = sequences[:-1]
+#     train_y = labels[:-1]
+#     train_dates = training_dates[:-1]
+
+#     test_x = sequences[-1:]
+#     test_y = labels[-1:]
+#     test_dates = forecast_dates[-1]
+
+#     # print("Train X shape:", train_x.shape)  # Expected: (samples, 30, num_features)
+#     # print("Train Y shape:", train_y.shape)  # Expected: (samples, 5)
+#     # print("Test X shape:", test_x.shape)    # Expected: (1, 30, num_features)
+#     # print("Test Y shape:", test_y.shape)    # Expected: (1, 5)
+#     # print("Example forecast dates for the first test sample:", test_dates[0])
+#     # print("Example training dates for the first test sample:", train_dates[0])
+
+#     return train_x, test_x, train_y, test_y, train_dates, test_dates
 
 
 def save_train_test_data_to_excel(train_x, test_x, train_y, test_y, train_dates, test_dates, config):
     """
-    Save training and testing data (features, labels, and forecast dates) to Excel files.
-
-    Args:
-        train_x (np.ndarray): Training input sequences.
-        test_x (np.ndarray): Testing input sequences.
-        train_y (np.ndarray): Training labels.
-        test_y (np.ndarray): Testing labels.
-        train_dates (list): List of forecast dates for training.
-        test_dates (list): List of forecast dates for testing.
-        config: Configuration object containing paths for saving files.
+    Save training and testing data (features, labels, and dates) to separate Excel files.
     """
+    # Flatten 3D arrays into 2D for saving
+    train_x_df = pd.DataFrame(train_x.reshape(train_x.shape[0], -1))  
+    test_x_df = pd.DataFrame(test_x.reshape(test_x.shape[0], -1))    
 
-    # Convert train_x, train_y, test_x, test_y to DataFrames
-    train_x_df = pd.DataFrame(train_x.reshape(train_x.shape[0], -1))  # Flatten 3D array to 2D
-    test_x_df = pd.DataFrame(test_x.reshape(test_x.shape[0], -1))    # Flatten 3D array to 2D
+    # Save labels and dates
+    train_y_df = pd.DataFrame(train_y, columns=[f"day_{i+1}" for i in range(train_y.shape[1])])
+    test_y_df = pd.DataFrame(test_y, columns=[f"day_{i+1}" for i in range(test_y.shape[1])])
 
-    # Convert labels and dates to DataFrames
-    train_y_df = pd.DataFrame(train_y, columns=[f"{config.target_column}_day_{i+1}" for i in range(train_y.shape[1])])
-    test_y_df = pd.DataFrame(test_y, columns=[f"{config.target_column}_day_{i+1}" for i in range(test_y.shape[1])])
+    train_dates_df = pd.DataFrame([list(d) for d in train_dates])
+    test_dates_df = pd.DataFrame([list(test_dates)])
 
-    train_dates_df = pd.DataFrame(train_dates, columns=[f"forecast_date_day_{i+1}" for i in range(train_y.shape[1])])
-    test_dates_df = pd.DataFrame(test_dates, columns=[f"forecast_date_day_{i+1}" for i in range(test_y.shape[1])])
+    # Write DataFrames to Excel files
+    train_x_df.to_excel(config.train_x_data_file, index=False)
+    train_y_df.to_excel(config.train_y_data_file, index=False)
+    train_dates_df.to_excel(config.train_dates_data_file, index=False)
 
-    # Save DataFrames to Excel files defined in config
-    train_x_path = config.train_x_data_file
-    train_y_path = config.train_y_data_file
-    train_dates_path = config.train_dates_data_file
+    test_x_df.to_excel(config.test_x_data_file, index=False)
+    test_y_df.to_excel(config.test_y_data_file, index=False)
+    test_dates_df.to_excel(config.test_dates_data_file, index=False)
 
-    test_x_path = config.test_x_data_file
-    test_y_path = config.test_y_data_file
-    test_dates_path = config.test_dates_data_file
-
-    # Save the data
-    train_x_df.to_excel(train_x_path, index=False)
-    train_y_df.to_excel(train_y_path, index=False)
-    train_dates_df.to_excel(train_dates_path, index=False)
-
-    test_x_df.to_excel(test_x_path, index=False)
-    test_y_df.to_excel(test_y_path, index=False)
-    test_dates_df.to_excel(test_dates_path, index=False)
+    print(f"Training and testing data written to respective files successfully.")
 
 def lstm_model_trainer(train_x, train_y, config):
 
