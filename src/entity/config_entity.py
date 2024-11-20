@@ -37,6 +37,10 @@ class ModelTrainerConfig:
     local_data_path: Path
     train_y_data_file: Path
     train_x_data_file: Path
+    full_train_x_data_file: Path
+    full_train_y_data_file: Path
+    full_train_x_dates_file: Path
+    full_train_y_dates_file: Path
     test_y_data_file: Path
     test_x_data_file: Path
     train_x_dates_file: Path
@@ -44,6 +48,7 @@ class ModelTrainerConfig:
     test_x_dates_file: Path
     test_y_dates_file: Path
     model_checkpoint_path: Path
+    model_checkpoint_path2: Path
     filters: int
     kernel_size: int
     activation1: str

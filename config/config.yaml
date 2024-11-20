@@ -29,14 +29,19 @@ model_trainer:
   root_dir_test: artifacts/model_trainer/test
   local_data_path: artifacts/data_transformation/lstm_transformed.xlsx
   train_x_data_file: artifacts/model_trainer/train/train_x.xlsx
+  full_train_x_data_file: artifacts/model_trainer/train/full_train_x.xlsx
   train_y_data_file: artifacts/model_trainer/train/train_y.xlsx
+  full_train_y_data_file: artifacts/model_trainer/train/full_train_y.xlsx
   train_x_dates_file: artifacts/model_trainer/train/train_x_dates.xlsx
+  full_train_x_dates_file: artifacts/model_trainer/train/full_train_x_dates.xlsx
   train_y_dates_file: artifacts/model_trainer/train/train_y_dates.xlsx
+  full_train_y_dates_file: artifacts/model_trainer/train/full_train_y_dates.xlsx
   test_x_data_file: artifacts/model_trainer/test/test_x.xlsx
   test_y_data_file: artifacts/model_trainer/test/test_y.xlsx
   test_x_dates_file: artifacts/model_trainer/test/test_x_dates.xlsx
   test_y_dates_file: artifacts/model_trainer/test/test_y_dates.xlsx
-  model_checkpoint_path: artifacts/model_trainer/model/5day_model.keras
+  model_checkpoint_path: artifacts/model_trainer/evaluated_model/5day_model.keras
+  model_checkpoint_path2: artifacts/model_trainer/model/best_5day_model.keras
   filters: 64
   kernel_size: 3
   activation1: 'relu'
@@ -56,5 +61,5 @@ model_trainer:
 
 model_evaluation:
   root_dir: artifacts/model_evaluation
-  model_path: artifacts/model_trainer/model/5day_model.keras
+  model_path: artifacts/model_trainer/evaluated_model/5day_model.keras
   metric_file_name: artifacts/model_evaluation/metrics.xlsx

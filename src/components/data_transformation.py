@@ -47,9 +47,9 @@ def min_max_scale(df, config):
 def remove_zeros_in_df(df):
 
     # Filter out rows where 'pettah_average' is 0
-    cleaned_df = df[df['pettah_average'] != 0]
-
-    return cleaned_df
+    df = df[df['pettah_average'] != 0]
+    
+    return df
 
 def save_preprocessed_excel(config: ConfigBox, df: pd.DataFrame):
     # Save the DataFrame to the specified file path as an Excel file

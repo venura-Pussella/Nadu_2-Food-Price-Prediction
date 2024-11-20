@@ -11,7 +11,7 @@ def prediction_pipeline(input_prices, lambda_value):
         transformed_prices = box_cox_with_min_max_scaling(input_prices, lambda_value)
 
         # Load your trained LSTM model
-        model =  tf.keras.models.load_model('artifacts/model_trainer/model/5day_model.keras')
+        model =  tf.keras.models.load_model('artifacts/model_trainer/model/best_5day_model.keras')
 
         # make prediction
         prediction = model.predict(transformed_prices)
