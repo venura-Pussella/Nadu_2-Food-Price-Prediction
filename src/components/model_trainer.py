@@ -170,6 +170,8 @@ def lstm_model_trainer(train_x, train_y, config):
 
     model.add(Conv1D(filters=config.filters, kernel_size=config.kernel_size, activation=config.activation1, input_shape=(train_x.shape[1], train_x.shape[2])))
 
+    
+
     # Add Bidirectional LSTM layers with dropout
     model.add(Bidirectional(LSTM(units=config.n_units_layer1, return_sequences=True)))
     model.add(Dropout(config.dropout_rate))
