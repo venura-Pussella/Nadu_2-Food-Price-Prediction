@@ -12,8 +12,7 @@ def results():
     update_real_values_in_csv(prediction_results_config)
 
 if __name__ == '__main__':
-
-    # Predict future values for 5 days
+     
      results()
 
 

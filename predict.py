@@ -4,7 +4,7 @@ from src.pipeline.inference.inference_stage_data_ingestion_latest_30days import 
 from src.pipeline.inference.inference_stage_output_preprocessing import create_prediction_dataframe
 from src.configuration.configuration import load_configuration, get_data_transformation_config , get_prediction_results_config
 from src.pipeline.inference.inference_stage_predictions_store import save_predictions_to_csv
-from src.utils.common import read_lambda_value
+from src.utils.common import read_lambda_value , create_directories
 
 def predict_future_prices():
 
@@ -28,9 +28,12 @@ def predict_future_prices():
     # Create a DataFrame with predicted prices and dates
     predicted_df = create_prediction_dataframe(predicted_prices, last_date)
 
-    csv_file_path = get_prediction_results_config(config)
+    prediction_results_config = get_prediction_results_config(config)
 
-    save_predictions_to_csv(predicted_df,csv_file_path)
+    # Create directories related to model trainer (root directory)
+    create_directories([prediction_results_config.root_dir])
+
+    save_predictions_to_csv(predicted_df,prediction_results_config)
 
 if __name__ == '__main__':
 
