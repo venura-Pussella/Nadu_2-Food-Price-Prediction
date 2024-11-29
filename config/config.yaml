@@ -63,3 +63,7 @@ model_evaluation:
   root_dir: artifacts/model_evaluation
   model_path: artifacts/model_trainer/evaluated_model/5day_model.keras
   metric_file_name: artifacts/model_evaluation/metrics.xlsx
+
+results:
+  root_dir: artifacts/results
+  data_path: artifacts/results/results.csv

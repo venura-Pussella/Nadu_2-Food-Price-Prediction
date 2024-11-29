@@ -72,3 +72,8 @@ class ModelEvaluationConfig:
     root_dir: Path
     model_path: Path
     metric_file_name: Path
+
+@dataclass(frozen=True)
+class PredictionResultsConfig:
+    root_dir: Path
+    data_path: Path

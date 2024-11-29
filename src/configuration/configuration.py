@@ -2,7 +2,7 @@
 from pathlib import Path
 from src.constants import *
 from src.utils.common import read_yaml
-from src.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataPreprocessingConfig, DataTransformationConfig, ModelTrainerConfig ,ModelEvaluationConfig
+from src.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataPreprocessingConfig, DataTransformationConfig, ModelTrainerConfig ,ModelEvaluationConfig , PredictionResultsConfig
 
 
 def load_configuration(config_filepath: Path = CONFIG_FILE_PATH, schema_filepath: Path = SCHEMA_FILE_PATH):
@@ -119,7 +119,6 @@ def get_model_trainer_config(config,schema) -> ModelTrainerConfig:
     )
 ##>>> Model Training Configuration End <<<##
 
-
 ##>>> Model Evaluation Configuration Start <<<##
 
 def get_model_evaluation_config(config) -> ModelEvaluationConfig:
@@ -133,5 +132,17 @@ def get_model_evaluation_config(config) -> ModelEvaluationConfig:
         model_path=model_evaluation.model_path,
         metric_file_name=model_evaluation.metric_file_name
     )
-
 ##>>> Model Evaluation Configuration End <<<##
+
+##>>> Prediction Results Configurations <<<###
+def get_prediction_results_config(config) -> PredictionResultsConfig:
+
+    # Extract prediction settings from the config
+    results = config.results
+
+    # Create and return a predicition results
+    return PredictionResultsConfig(
+        root_dir=results.root_dir,
+        data_path=results.data_path,
+)
+##>>> Prediction Results Configurations End <<<###
