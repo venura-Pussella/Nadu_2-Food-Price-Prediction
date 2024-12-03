@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import pandas as pd
 import altair as alt
-from predict import predict_future_prices 
+from src.pipeline.inference.predict import predict_future_prices 
 
 # Function to create the line chart
 def create_line_chart(metrics_df, col):

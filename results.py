@@ -1,5 +1,5 @@
 from src.configuration.configuration import load_configuration,get_prediction_results_config
-from src.pipeline.results_writer import update_real_values_in_csv
+from src.components.inference.inference_results_writer import update_real_values_in_csv
 
 def results():
 

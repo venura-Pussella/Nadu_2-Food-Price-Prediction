@@ -1,9 +1,9 @@
 from src import logger
-from src.pipeline.stage_01_data_ingestion import data_ingestion_training_pipeline
-from src.pipeline.stage_02_data_validation import data_validation_training_pipeline
-from src.pipeline.stage_03_data_preprocessing import data_preprocessing_training_pipeline
-from src.pipeline.stage_04_data_transformer import data_transformation_training_pipeline
-from src.pipeline.stage_05_model_trainer import model_full_trainer_training_pipeline
+from src.pipeline.training.stage_01_data_ingestion import data_ingestion_training_pipeline
+from src.pipeline.training.stage_02_data_validation import data_validation_training_pipeline
+from src.pipeline.training.stage_03_data_preprocessing import data_preprocessing_training_pipeline
+from src.pipeline.training.stage_04_data_transformer import data_transformation_training_pipeline
+from src.pipeline.training.stage_05_model_trainer import model_full_trainer_training_pipeline
 
 STAGE_NAME = "Data Ingestion stage"
 
