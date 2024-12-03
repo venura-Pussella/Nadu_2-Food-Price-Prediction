@@ -56,6 +56,13 @@ def get_predictions():
     except Exception as e:
         st.error(f"Error during training: {str(e)}")
 
+# def show_real_prices():
+#     try:
+#         os.system("python real_price.py") 
+#         st.success("Show Real Prices successful!")
+#     except Exception as e:
+#         st.error(f"Error during training: {str(e)}")
+
 # Sidebar for navigation
 st.sidebar.title("Navigation")
 options = st.sidebar.radio("Go to", ["Home", "Model Evaluation","Re-Train - Full Train", "Predict Prices"])

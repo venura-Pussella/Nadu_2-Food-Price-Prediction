@@ -45,7 +45,6 @@ try:
 except Exception as e:
     logger.exception(e)
 
-
 STAGE_NAME = "Inference Save Predicted Results"
 
 try:
