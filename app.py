@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import pandas as pd
 import altair as alt
-from src.pipeline.inference.predict import predict_future_prices 
 
 # Function to create the line chart
 def create_line_chart(metrics_df, col):
@@ -38,25 +37,24 @@ st.set_page_config(
 def run_model_evaluation_training():
     try:
         os.system("python model_evaluation_main.py")  # Adjust the path to your training script if needed
-        st.success("Training successful!")
+        st.success("model evaluation training successful!")
     except Exception as e:
         st.error(f"Error during training: {str(e)}")
 
 def run_model_full_training():
     try:
         os.system("python model_full_training_main.py")  # Adjust the path to your training script if needed
-        st.success("Training successful!")
+        st.success("Model full training successful!")
     except Exception as e:
         st.error(f"Error during training: {str(e)}")
 
 # Function to run predictions
 def get_predictions():
     try:
-        predictions_df = predict_future_prices()  # Get predictions as a DataFrame
-        return predictions_df
+        os.system("python inference.py") 
+        st.success("Inference successful!")
     except Exception as e:
-        st.error(f"Error during prediction: {str(e)}")
-        return None
+        st.error(f"Error during training: {str(e)}")
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
@@ -91,10 +89,6 @@ elif options == "Predict Prices":
             # Ensure correct data types
             predictions_df['date'] = pd.to_datetime(predictions_df['date'], errors='coerce')
             predictions_df['predicted_value'] = pd.to_numeric(predictions_df['predicted_value'], errors='coerce')
-
-            # # Optional variability for demo purposes
-            # if st.checkbox("Add random variability to predictions (demo purposes)"):
-            #     predictions_df['predicted_value'] += np.random.uniform(-5, 5, size=len(predictions_df))
 
             # Add 'Stage' column for chart grouping
             predictions_df['Stage'] = 'Predicted'
