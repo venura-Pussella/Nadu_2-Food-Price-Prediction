@@ -1,0 +1,2 @@
+docker build -t streamlit-app . - Image Build
+docker run -d -p 80:80 --name streamlit-container streamlit-app - Spin up the container
