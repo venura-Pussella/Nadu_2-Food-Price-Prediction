@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import pandas as pd
 import altair as alt
+from inference import inference
 
 # Function to create the line chart
 def create_line_chart(metrics_df, col):
@@ -50,11 +51,13 @@ def run_model_full_training():
 
 # Function to run predictions
 def get_predictions():
+    predictions_df= None
     try:
-        os.system("python inference.py") 
+        predictions_df , input_df = inference()
         st.success("Inference successful!")
     except Exception as e:
         st.error(f"Error during training: {str(e)}")
+    return predictions_df , input_df
 
 def show_real_prices():
     try:
@@ -86,33 +89,84 @@ elif options == "Re-Train - Full Train":
     if st.button("Start Training - Full Training"):
         run_model_full_training()
 
+# # Predict Future Prices Page
+# elif options == "Predict Prices":
+#     st.title("Predict Pettah Market Nadu 2 Prices for Next 5 Days")
+#     if st.button("Run Prediction"):
+#         print("Running Prediction...")
+#         predictions_df, input_df = get_predictions()
+
+#         if predictions_df is not None:
+
+#             input_df = input_df.rename(columns={'pettah_average': 'predicted_value', 'date': 'Date'})
+#             combined_df = pd.concat([input_df, predictions_df], ignore_index=True)
+#             print(f"combined_df: {combined_df}")
+
+#             # Ensure correct data types
+#             predictions_df['date'] = pd.to_datetime(predictions_df['date'], errors='coerce')
+#             predictions_df['predicted_value'] = pd.to_numeric(predictions_df['predicted_value'], errors='coerce')
+
+#             # Add 'Stage' column for chart grouping
+#             predictions_df['Stage'] = 'Predicted'
+
+#             # Drop rows with missing values
+#             predictions_df.dropna(subset=['date', 'predicted_value'], inplace=True)
+
+#             # Display chart and table
+#             st.subheader("Prediction Results")
+
+#             # Render the Altair line chart
+#             col = 'predicted_value'
+#             line_chart = create_line_chart(predictions_df, col)
+#             st.altair_chart(line_chart, use_container_width=True)
+
+#             # Display the prediction table
+#             st.write("Prediction Table")
+#             st.dataframe(predictions_df)
+#         else:
+#             st.warning("No predictions available. Please try again.")
+
+
 # Predict Future Prices Page
 elif options == "Predict Prices":
     st.title("Predict Pettah Market Nadu 2 Prices for Next 5 Days")
     if st.button("Run Prediction"):
-        predictions_df = get_predictions()
+        print("Running Prediction...")
+        predictions_df, input_df = get_predictions()
 
-        if predictions_df is not None:
-            # Ensure correct data types
-            predictions_df['date'] = pd.to_datetime(predictions_df['date'], errors='coerce')
-            predictions_df['predicted_value'] = pd.to_numeric(predictions_df['predicted_value'], errors='coerce')
+        if predictions_df is not None and input_df is not None:
+
+            # Ensure correct data types for input_df
+            input_df['date'] = pd.to_datetime(input_df['date'], errors='coerce')
+            input_df['pettah_average'] = pd.to_numeric(input_df['pettah_average'], errors='coerce')
+            input_df['Stage'] = 'Past'
 
             # Add 'Stage' column for chart grouping
             predictions_df['Stage'] = 'Predicted'
 
+            # Rename columns for consistent display
+            predictions_df = predictions_df.rename(columns={'predicted_value': 'pettah_average'})
+
+            # Combine past and predicted prices
+            combined_df = pd.concat([input_df, predictions_df], ignore_index=True)
+
             # Drop rows with missing values
-            predictions_df.dropna(subset=['date', 'predicted_value'], inplace=True)
+            combined_df.dropna(subset=['date', 'pettah_average'], inplace=True)
 
             # Display chart and table
             st.subheader("Prediction Results")
 
             # Render the Altair line chart
-            col = 'predicted_value'
-            line_chart = create_line_chart(predictions_df, col)
+            col = 'pettah_average'
+            line_chart = create_line_chart(combined_df, col)
             st.altair_chart(line_chart, use_container_width=True)
 
-            # Display the prediction table
+            # Display the input (past prices) table
+            st.write("Past Prices Table")
+            st.dataframe(input_df)
+
+            # Display the predictions table
             st.write("Prediction Table")
             st.dataframe(predictions_df)
         else:
-            st.warning("No predictions available. Please try again.")
+            st.warning("No predictions or past prices available. Please try again.")
