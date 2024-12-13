@@ -8,6 +8,7 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
+import pandas as pd
 
 
 @ensure_annotations
@@ -138,4 +139,9 @@ def read_lambda_value(config):
         print(f"Error: Invalid lambda value in the file at {config.lambda_value}.")
         return None
     
+
+def read_excel_data(config):
+    # Read the Excel file into a DataFrame
+    df = pd.read_excel(config.data_path)
+    return df
 

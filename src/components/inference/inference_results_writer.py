@@ -50,7 +50,11 @@ def update_real_values_in_csv(config):
 
         # Save the updated DataFrame back to the same CSV
         df.to_csv(config.data_path, index=False)
+        
         print(f"Updated CSV saved successfully at {config.data_path}")
+
+        return df
+    
     except Exception as e:
         print(f"An error occurred while updating the CSV: {e}")
 

@@ -9,7 +9,11 @@ def results():
     # Retrieve the data ingestion configuration from the loaded config
     prediction_results_config = get_prediction_results_config(config)
 
-    update_real_values_in_csv(prediction_results_config)
+    df=update_real_values_in_csv(prediction_results_config)
+
+    print(df)
+
+    return df
 
 if __name__ == '__main__':
      
